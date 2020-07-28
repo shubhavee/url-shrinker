@@ -7,7 +7,8 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb://localhost/ManualAuth');
+const uri="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
+mongoose.connect(uri || 'mongodb://localhost/ManualAuth');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
