@@ -1,5 +1,3 @@
-// mongodb+srv://user2345:<password>@cluster0.qr6fu.gcp.mongodb.net/test
-
 var express = require('express');
 var ejs = require('ejs');
 var path = require('path');
