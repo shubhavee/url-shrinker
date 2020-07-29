@@ -7,11 +7,15 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-// const uri="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
+const MONGODB_URI="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
 // mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ManualAuth');
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/ManualAuth');
 
 var db = mongoose.connection;
+db.on('connected',()=>{
+  console.log('Mongoose is connected!');
+});
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
 });
