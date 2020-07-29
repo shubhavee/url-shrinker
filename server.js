@@ -1,3 +1,5 @@
+// mongodb+srv://user2345:<password>@cluster0.qr6fu.gcp.mongodb.net/test
+
 var express = require('express');
 var ejs = require('ejs');
 var path = require('path');
@@ -7,8 +9,9 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-const uri="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
-mongoose.connect(uri || 'mongodb://localhost/ManualAuth');
+// const uri="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
+mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ManualAuth');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
