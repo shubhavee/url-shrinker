@@ -11,8 +11,9 @@ require('dotenv').config()
 
 // const MONGODB_URI="mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority"
 // mongodb+srv://user2345:cloud2345@cluster1.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority
-
 // mongodb+srv://user2345:cloud2345@cluster1.jduc1.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+// mongodb+srv://user2345:cloud2345@cluster0.qr6fu.gcp.mongodb.net/ManualAuth?retryWrites=true&w=majority
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ManualAuth');
 
 var db = mongoose.connection;
